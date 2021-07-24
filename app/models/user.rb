@@ -1,6 +1,3 @@
-# email
-# password
-# password confirmation
 class User < ApplicationRecord
   has_secure_password
 

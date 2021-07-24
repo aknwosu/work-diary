@@ -3,13 +3,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    if user&.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = 'Successfully Logged In!'
       redirect_to root_path, notice: "Successfully logged in"
     else
       flash[:warning] = 'Invalid Username or Password'
-	  puts flash.inspect, 'flash==================='
       redirect_to login_path
     end
   end
