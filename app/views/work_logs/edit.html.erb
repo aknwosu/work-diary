@@ -1,0 +1,11 @@
+<main>
+  <h1>Edit work log</h1>
+  <% if @work_log.errors.any? %>
+    <div class="alert alert-danger">
+      <% @work_log.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= render 'form', work_log: @work_log %>
+</main>

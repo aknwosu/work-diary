@@ -9,5 +9,11 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  resources :work_logs do
+    collection do
+      put :clock_out
+    end
+  end
+
   root to: 'main#index'
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_23_163037) do
+ActiveRecord::Schema.define(version: 2021_07_24_065457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,4 +23,15 @@ ActiveRecord::Schema.define(version: 2021_07_23_163037) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "work_logs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "clock_in", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "clock_out"
+    t.string "description", limit: 100
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_work_logs_on_user_id"
+  end
+
+  add_foreign_key "work_logs", "users"
 end
