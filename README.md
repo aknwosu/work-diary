@@ -34,10 +34,13 @@ Requires ruby 2.7.1
 	In a day;
 		-  work on more tests
 		-  reset password
-		-  Calculation of hours worked is abit off
 		-  Use proper timezones
+		-  Delete tracked sessions
+		-  Styles could use a lot of work and be responsive
+  
 	In a month;
 		- Add information about users
+		- Calculation of hours worked is abit off with the rounding
 		- Multiple users can belong to multiple organizations
 		- No hour overlap regardless of what organization is currently being tracked for
 		- Option to change timezones

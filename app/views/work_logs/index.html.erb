@@ -24,7 +24,7 @@
       <% @work_logs.each do |log| %>
         <tr>
           <td><%= log.clock_in.to_formatted_s(:long) %></td>
-          <td><%= log.clock_out %> </td>
+          <td><%= log.clock_out&.to_formatted_s(:long) || '' %> </td>
           <td>
             <% if log.clock_out %>
               <%= Time.at(log.clock_out - log.clock_in).utc.strftime "%H:%M" %>
