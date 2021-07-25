@@ -1,0 +1,15 @@
+    <%= form_with model: work_log, local: true do |f| %>
+      <div class="form-control">
+        <%= f.label :clock_in %>
+        <%= f.datetime_select :clock_in, class: "form-control, datepicker" %>
+      </div>
+      <div class="form-control">
+        <%= f.label :clock_out %>
+        <%= f.datetime_select :clock_out,  class: "form-control" %>
+      </div>
+	   <div class="form-control">
+        <%= f.label :description %>
+        <%= f.text_field :description,  class: "form-control" %>
+      </div>
+        <%= f.button "Update", class: "btn btn-primary" %>
+    <% end %>
