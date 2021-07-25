@@ -1,1 +1,8 @@
 <h1>Home</h1>
+<% if current_user == nil %>
+  <div class="mt-5">
+    <%= link_to  "Create an account", sign_up_path %>
+    or
+    <%= link_to  "sign in", login_path %>
+  </div>
+<% end %>
