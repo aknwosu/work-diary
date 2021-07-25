@@ -10,9 +10,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Successfully created account"
+      redirect_to work_logs_path, notice: 'Successfully created account'
     else
-      # flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render 'new'
     end
   end
